@@ -7,7 +7,6 @@ int main()
 {
     int num , a, b, c;
     int d = 0;  //计数水仙花数个数
-    printf("");
 
     num = 100;
     while (num >= 100 && num <= 999)
