@@ -1,39 +1,33 @@
 //202511716118
 //1441913365@qq.com
 //杨雨鑫
+
 #include<stdio.h>
-
 int main()
+
 {
-    int score;
-    printf("请输入学生成绩:（0-100）：");
-    scanf("%d",&score);
-    if (score < 0  || score > 100)
+    int num , a, b, c;
+    int d = 0;  //计数水仙花数个数
+    printf("0-100的水仙花数有：");
+    
+    for (num = 100;num <= 999; num++)
     {
-        printf("输入数据无效，应在0-100之间\n");
-        return 0;
-    }
-    if (score >= 90)
-    {
-        printf("该学生成绩等级为：A\n");
-    } 
-    else if(score >= 80)
-    {
-        printf("该学生成绩等级为：B\n");
-    }
-    else if(score >= 70)
-    {
-        printf("该学生成绩等级为：C\n");
-    }
-    else if(score >= 60)
-    {
-        printf("该学生成绩等级为：D\n");
-    }
-    else
-    {
-        printf("该学生成绩等级为：E\n");
+        a = num / 100;         //百位
+        b = (num / 10) % 10;   //十位
+        c = num % 10;          //个位
+
+        if (num == a*a*a + b*b*b + c*c*c)
+        {
+            if (d > 0)
+            {
+                printf(" ");
+            }
+            printf("%d ", num);
+            d ++;
+        }
     }
 
+    printf("\n");
     return 0;
 
 }
