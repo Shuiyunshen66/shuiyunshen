@@ -8,7 +8,7 @@ int main()
 {
     int num , a, b, c;
     int d = 0;  //计数水仙花数个数
-    printf("0-100的水仙花数有：");
+    printf("");
     
     for (num = 100;num <= 999; num++)
     {
