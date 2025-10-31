@@ -1,26 +1,36 @@
 //202511716118
 //1441913365@qq.com
 //杨雨鑫
-#include<stdio.h>
 
+#include<stdio.h>
 int main()
 {
-    int a;
-    int b;
-    int c;
+    int num , a, b, c;
+    int d = 0;  //计数水仙花数个数
+    printf("0-100的水仙花数有：");
 
-printf("请输入三条边长，中间用空格隔开：");
-scanf("%d %d %d", &a, &b, &c);
+    num = 100;
+    while (num >= 100 && num <= 999)
+    {
+        a = num / 100;
+        b = (num / 10) % 10;
+        c = num % 10;
 
-if (a + b > c && a + c> b && b + c > a)
-{
-    printf("可以组成三角形\n");
-}
-else
-{
-    printf("不能组成三角形\n");
-}
- 
-return 0;
+        if (num == a*a*a + b*b*b + c*c*c)
+        {
+
+            if (d > 0)
+            {
+                printf(" ");
+            }
+            printf("%d ", num);
+            d ++;
+        }
+
+        num ++;
+
+    }
+
+    return 0;
 
 }
