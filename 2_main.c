@@ -21,7 +21,7 @@ int main()
             {
                 printf(" ");
             }
-            printf("%d ", num);
+            printf("%d", num);
             d ++;
         }
     }
