@@ -1,41 +1,48 @@
 //202511716118
 //1441913365@qq.com
 //杨雨鑫
-#include<stdio.h>
 
+#include<stdio.h>
 int main()
 {
     int a;
-    int b;
-    int c;
+    int prime = 1;//若是质数，则prime输出为1
+    int i = 2;
 
- printf("请依次输入两个整数和运算符号，中间用空格隔开：");
- scanf("%d %d %c", &a, &b, &c);
+    printf("请输入密钥：");
+    scanf("%d",&a);
 
- if (c == '+')
- {
-    printf("%d\n", a + b);
- }
- else if(c == '-')
- {
-    printf("%d\n", a - b);
- }
- else if(c == '*')
- {
-    printf("%d\n", a * b);
- }
- else if(c == '/')
- {
-    if(b == 0)
+    if (a <= 0 || a >= 50)
     {
-        printf("请检查输入数据，除数不能为0\n");
+        printf("输入无效，请输入小于50的正整数\n");
+        return 0;
+    }
+
+    if (a == 1)
+    {
+        prime = 0 ;
     }
     else
     {
-        printf("%.2f\n", (float)a / (float)b);
+        while(i < a)
+        {
+            if(a % i == 0)
+            {
+                prime = 0;
+                break;
+            }
+            i ++;
+        }
     }
- }
+    if (prime)
+    {
+        printf("密钥安全，密码设置成功\n");
+    }
+    else 
+    {
+        printf("密钥不安全，请重新输入\n");
+    }
 
- return 0;
+    return 0;
 
 }
