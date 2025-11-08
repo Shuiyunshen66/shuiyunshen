@@ -3,38 +3,40 @@
 //杨雨鑫
 
 #include<stdio.h>
+int count(int arr[],int j)
+{
+    int sum = 0;
+    for (int i = 0;i < j;i ++)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int times(int arr[],int j)
+{
+    int product = 1;
+    for(int i = 0;i < j;i ++)
+    {
+        product *= arr[i];
+    }
+    return product;
+}
+
 int main()
 {
-    int a;
-    int i = 0;
     int arr[5];
-
-    printf("请输入数字，并用回车分隔：");
-
-    while(i < 5 )
+    for(int i = 0;i < 5;i ++)
     {
-        scanf("%d",&a) == 1; 
-        
-        if (a % 2 == 0)
-        {
-            arr[i] = a;
-            i ++;
-        }
+        scanf("%d",&arr[i]);
     }
 
-    i = 0;
-    while(i < 5)
-    {
-        printf("%d",arr[i]);
-        if(i < 4)
-        {
-            printf(" ");
-        }
-        i ++;
-    }
 
-    printf("\n");
+int sum = count(arr,5);
+int product = times(arr , 5);
 
-    return 0;
+printf("%d %d", sum, product);
+
+return 0;
 
 }
