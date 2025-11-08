@@ -4,29 +4,26 @@
 
 #include<stdio.h>
 int main()
-
 {
-    int num , a, b, c;
-    int d = 0;  //计数水仙花数个数
-    
-    for (num = 100;num <= 999; num++)
+    int arr[3][3];
+    for(int i = 0;i < 3;i ++)
     {
-        a = num / 100;         //百位
-        b = (num / 10) % 10;   //十位
-        c = num % 10;          //个位
-
-        if (num == a*a*a + b*b*b + c*c*c)
+        for(int j = 0;j < 3;j ++)
         {
-            if (d > 0)
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(int i = 0; i < 3; i ++)
+    {
+        for(int j = 0;j < 3; j ++)
+        {
+            printf("%d",arr[j][i]);
+            if(j < 2)
             {
                 printf(" ");
             }
-            printf("%d", num);
-            d ++;
         }
+        printf("\n");
     }
-
-    printf("\n");
     return 0;
-
 }
