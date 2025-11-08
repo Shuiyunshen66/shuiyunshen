@@ -3,40 +3,36 @@
 //杨雨鑫
 
 #include<stdio.h>
+void reput(int arr[],int j)
+{
+    int temp;
+    for(int i = 0;i < j/2;i ++)
+    {
+        temp = arr[i];
+        arr[i] = arr[j - 1 - i];
+        arr[j - 1 - i] = temp;
+    }
+} 
+
 int main()
 {
     int arr[5];
-    int i;
-
-    i = 0;
-    while(i < 4)
+    for(int i = 0;i < 5;i ++)
     {
-        scanf("%d",&arr[i]);
-        i ++;
+    scanf("%d",&arr[i]);
     }
 
-    i = 4;
-    while(i > 0)
+reput(arr , 5);
+
+for(int i = 0;i < 5;i ++)
+{
+    printf("%d",arr[i]);
+    if (i < 4)
     {
-        arr[i] = arr[i - 1];
-        i --;
+        printf(" ");
     }
+}
 
-    arr[0] = 0;
-    
-    i = 0;
-    while(i < 5)
-    {
-        printf("%d",arr[i]);
-        if(i < 4)
-        {
-            printf(" ");
-        }
-        i ++;
-    }
-
-    printf("\n");
-
-    return 0;
+return 0;
 
 }
