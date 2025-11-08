@@ -3,33 +3,26 @@
 //杨雨鑫
 
 #include<stdio.h>
-int main()
+int power(int a, int b)
 {
-    int num , a, b, c;
-    int d = 0;  //计数水仙花数个数
-
-    num = 100;
-    while (num >= 100 && num <= 999)
+    int result = 1;
+    for(int i = 0;i < b ;i ++)
     {
-        a = num / 100;
-        b = (num / 10) % 10;
-        c = num % 10;
+        result *= a;
+    }
+    return result;
+}
 
-        if (num == a*a*a + b*b*b + c*c*c)
+int main()
+    {
+        int c = 0;
+        for(int i = 1;i <= 5;i ++)
         {
-
-            if (d > 0)
-            {
-                printf(" ");
-            }
-            printf("%d", num);
-            d ++;
+            c += power(i , 2);
         }
 
-        num ++;
+        printf("%d",c);
 
+        return 0;
+        
     }
-
-    return 0;
-
-}
